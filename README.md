@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @davidpius95
+- 👋 Hi, I’m @David
 - 👀 I’m interested in Blockchain Development
 - 🌱 I’m currently learning Solidity
 - 💞️ I’m looking to collaborate on Blockchain Dev, smarts contract, Solidity
