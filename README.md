@@ -8,3 +8,4 @@
 davidpius95/davidpius95 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
 --->
+[![David GitHub stats](https://github-readme-stats.vercel.app/api?username=davidpius95)](https://github.com/davidpius95/github-readme-stats)
