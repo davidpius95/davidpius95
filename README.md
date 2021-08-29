@@ -13,5 +13,4 @@ You can click the Preview link to take a look at your changes.
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=davidpius95)](https://github.com/davidpius95/github-readme-stats)
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=davidpius95&repo=github-readme-stats)](https://github.com/davidpius95/github-readme-stats)
-
-
+api/pin?username=anuraghazra&repo=github-readme-stats
