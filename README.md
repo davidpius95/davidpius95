@@ -3,7 +3,7 @@
 <!--
 **David/David** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.-->
 
-My name is Temitayo, I'm a Solidity Smart Contract Developer
+My name is David, I'm a Solidity Smart Contract Developer
 
 [![David's github stats](https://github-readme-stats.vercel.app/api?username=davidpius95&show_icons=true&theme=radical&hide=stars)](https://github.com/davidpius95/)<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=David&" alt="yczar" /></p>
 
