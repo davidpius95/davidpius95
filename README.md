@@ -1,16 +1,26 @@
-- 👋 Hi, I’m @David
-- 👀 I’m interested in Blockchain Development
-- 🌱 I’m am a Solidity Developer
-- 💞️ I’m looking to collaborate,  Blockchain Dev, smarts contract
-- 📫 How to reach me ...
+### Hi there 👋
 
-<!---
-davidpius95/davidpius95 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+<!--
+**David/David** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.-->
 
-![David GitHub stats](https://github-readme-stats.vercel.app/api?username=davidpius95&show_icons=true&theme=radical)
+My name is Temitayo, I'm a Solidity Smart Contract Developer
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=davidpius95)](https://github.com/davidpius95/github-readme-stats)
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=davidpius95&repo=github-readme-stats)](api/pin?username=anuraghazra&repo=github-readme-stats)
+[![David's github stats](https://github-readme-stats.vercel.app/api?username=davidpius95&show_icons=true&theme=radical&hide=stars)](https://github.com/davidpius95/)<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=David&" alt="yczar" /></p>
 
+
+- 🔭 I’m currently working on Interesting things
+- 🌱 I’m currently learning a lot of interesting things
+- 👯 I’m looking to collaborate on all sort of interesting things
+- 🤔 I’m looking for help with interesting things
+- 💬 Ask me about most interesting things
+- 📫 How to reach me: [David](https://twitter.com/david.web3)
+- 😄 Pronouns: That guy 😀 
+- ⚡ Fun fact: I like interesting things
+- reach me faster: [@davidpius10](https://twitter.com/david.web3)
+
+
+### Get in touch with me...
+
+[<img src='https://image.flaticon.com/icons/svg/2965/2965306.svg' width='32' title='Email Me!'>](mailto://davidpius95@gmail.com)
+[<img src='https://image.flaticon.com/icons/svg/1409/1409937.svg' width='32' title='DM Me!'>](https://twitter.com/david.web3)
+[<img src='https://image.flaticon.com/icons/svg/1409/1409945.svg' width='32' title='Message Me!'>](https://www.linkedin.com/in/david-uzochukwu/)
