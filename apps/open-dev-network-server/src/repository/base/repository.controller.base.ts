@@ -46,6 +46,9 @@ export class RepositoryControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: RepositoryCreateInput,
+  })
   async createRepository(
     @common.Body() data: RepositoryCreateInput
   ): Promise<Repository> {
@@ -163,6 +166,9 @@ export class RepositoryControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: RepositoryUpdateInput,
   })
   async updateRepository(
     @common.Param() params: RepositoryWhereUniqueInput,

@@ -45,6 +45,9 @@ export class L2sControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: L2sCreateInput,
+  })
   async createL2s(@common.Body() data: L2sCreateInput): Promise<L2s> {
     return await this.service.createL2s({
       data: data,
@@ -120,6 +123,9 @@ export class L2sControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: L2sUpdateInput,
   })
   async updateL2s(
     @common.Param() params: L2sWhereUniqueInput,

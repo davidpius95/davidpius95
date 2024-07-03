@@ -45,6 +45,9 @@ export class TechnicalControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: TechnicalCreateInput,
+  })
   async createTechnical(
     @common.Body() data: TechnicalCreateInput
   ): Promise<Technical> {
@@ -124,6 +127,9 @@ export class TechnicalControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: TechnicalUpdateInput,
   })
   async updateTechnical(
     @common.Param() params: TechnicalWhereUniqueInput,
