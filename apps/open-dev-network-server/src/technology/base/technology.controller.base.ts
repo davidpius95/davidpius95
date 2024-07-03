@@ -45,6 +45,9 @@ export class TechnologyControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: TechnologyCreateInput,
+  })
   async createTechnology(
     @common.Body() data: TechnologyCreateInput
   ): Promise<Technology> {
@@ -162,6 +165,9 @@ export class TechnologyControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: TechnologyUpdateInput,
   })
   async updateTechnology(
     @common.Param() params: TechnologyWhereUniqueInput,

@@ -45,6 +45,9 @@ export class NonTechnicalControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: NonTechnicalCreateInput,
+  })
   async createNonTechnical(
     @common.Body() data: NonTechnicalCreateInput
   ): Promise<NonTechnical> {
@@ -124,6 +127,9 @@ export class NonTechnicalControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: NonTechnicalUpdateInput,
   })
   async updateNonTechnical(
     @common.Param() params: NonTechnicalWhereUniqueInput,

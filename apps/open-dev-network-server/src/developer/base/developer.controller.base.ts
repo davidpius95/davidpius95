@@ -45,6 +45,9 @@ export class DeveloperControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: DeveloperCreateInput,
+  })
   async createDeveloper(
     @common.Body() data: DeveloperCreateInput
   ): Promise<Developer> {
@@ -133,6 +136,9 @@ export class DeveloperControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: DeveloperUpdateInput,
   })
   async updateDeveloper(
     @common.Param() params: DeveloperWhereUniqueInput,

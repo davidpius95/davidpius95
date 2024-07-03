@@ -1,5 +1,5 @@
 datasource db {
-  provider = "postgresql"
+  provider = "mongodb"
   url      = env("DB_URL")
 }
 
@@ -9,36 +9,27 @@ generator client {
 
 model NonTechnical {
   createdAt DateTime @default(now())
-  id        String   @id @default(cuid())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   updatedAt DateTime @updatedAt
 }
 
 model Technical {
   createdAt DateTime @default(now())
-  id        String   @id @default(cuid())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   updatedAt DateTime @updatedAt
 }
 
 model L2s {
   createdAt DateTime @default(now())
-  id        String   @id @default(cuid())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   updatedAt DateTime @updatedAt
-}
-
-model Developer {
-  createdAt     DateTime @default(now())
-  email         String?
-  githubProfile String?
-  id            String   @id @default(cuid())
-  name          String?
-  updatedAt     DateTime @updatedAt
 }
 
 model Project {
   createdAt    DateTime     @default(now())
   description  String?
   endDate      DateTime?
-  id           String       @id @default(cuid())
+  id           String       @id @default(auto()) @map("_id") @db.ObjectId
   name         String?
   repositories Repository[]
   startDate    DateTime?
@@ -46,24 +37,33 @@ model Project {
   updatedAt    DateTime     @updatedAt
 }
 
+model Developer {
+  createdAt     DateTime @default(now())
+  email         String?
+  githubProfile String?
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  name          String?
+  updatedAt     DateTime @updatedAt
+}
+
 model Technology {
   createdAt   DateTime @default(now())
   description String?
-  id          String   @id @default(cuid())
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
   name        String?
   project     Project? @relation(fields: [projectId], references: [id])
-  projectId   String?
+  projectId   String?  @db.ObjectId
   updatedAt   DateTime @updatedAt
   version     String?
 }
 
 model Repository {
   createdAt DateTime @default(now())
-  id        String   @id @default(cuid())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   language  String?
   name      String?
   project   Project? @relation(fields: [projectId], references: [id])
-  projectId String?
+  projectId String?  @db.ObjectId
   updatedAt DateTime @updatedAt
   url       String?
 }
@@ -72,10 +72,63 @@ model User {
   createdAt DateTime @default(now())
   email     String?  @unique
   firstName String?
-  id        String   @id @default(cuid())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   lastName  String?
   password  String
   roles     Json
   updatedAt DateTime @updatedAt
   username  String   @unique
+}
+
+model TechStack {
+  createdAt DateTime @default(now())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  issues    Issue[]
+  name      String?
+  updatedAt DateTime @updatedAt
+}
+
+model Category {
+  createdAt DateTime @default(now())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  issues    Issue[]
+  name      String?
+  updatedAt DateTime @updatedAt
+}
+
+model Issue {
+  category    Category?  @relation(fields: [categoryId], references: [id])
+  categoryId  String?    @db.ObjectId
+  createdAt   DateTime   @default(now())
+  description String?
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  techStack   TechStack? @relation(fields: [techStackId], references: [id])
+  techStackId String?    @db.ObjectId
+  title       String?
+  updatedAt   DateTime   @updatedAt
+}
+
+model UserPreference {
+  createdAt DateTime @default(now())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  key       String?
+  updatedAt DateTime @updatedAt
+  value     String?
+}
+
+model UserActivity {
+  action    String?
+  createdAt DateTime  @default(now())
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  timestamp DateTime?
+  updatedAt DateTime  @updatedAt
+}
+
+model UserStatistic {
+  createdAt  DateTime  @default(now())
+  id         String    @id @default(auto()) @map("_id") @db.ObjectId
+  metric     String?
+  recordedAt DateTime?
+  updatedAt  DateTime  @updatedAt
+  value      Float?
 }
