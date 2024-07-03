@@ -1,0 +1,81 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model NonTechnical {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  updatedAt DateTime @updatedAt
+}
+
+model Technical {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  updatedAt DateTime @updatedAt
+}
+
+model L2s {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  updatedAt DateTime @updatedAt
+}
+
+model Developer {
+  createdAt     DateTime @default(now())
+  email         String?
+  githubProfile String?
+  id            String   @id @default(cuid())
+  name          String?
+  updatedAt     DateTime @updatedAt
+}
+
+model Project {
+  createdAt    DateTime     @default(now())
+  description  String?
+  endDate      DateTime?
+  id           String       @id @default(cuid())
+  name         String?
+  repositories Repository[]
+  startDate    DateTime?
+  technologies Technology[]
+  updatedAt    DateTime     @updatedAt
+}
+
+model Technology {
+  createdAt   DateTime @default(now())
+  description String?
+  id          String   @id @default(cuid())
+  name        String?
+  project     Project? @relation(fields: [projectId], references: [id])
+  projectId   String?
+  updatedAt   DateTime @updatedAt
+  version     String?
+}
+
+model Repository {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  language  String?
+  name      String?
+  project   Project? @relation(fields: [projectId], references: [id])
+  projectId String?
+  updatedAt DateTime @updatedAt
+  url       String?
+}
+
+model User {
+  createdAt DateTime @default(now())
+  email     String?  @unique
+  firstName String?
+  id        String   @id @default(cuid())
+  lastName  String?
+  password  String
+  roles     Json
+  updatedAt DateTime @updatedAt
+  username  String   @unique
+}
