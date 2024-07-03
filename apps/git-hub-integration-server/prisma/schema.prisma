@@ -1,0 +1,28 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model OAuthToken {
+  accessToken  String?
+  createdAt    DateTime @default(now())
+  expiresIn    Int?
+  id           String   @id @default(cuid())
+  refreshToken String?
+  scope        String?
+  updatedAt    DateTime @updatedAt
+}
+
+model GitHubUser {
+  avatarUrl  String?
+  createdAt  DateTime @default(now())
+  email      String?
+  id         String   @id @default(cuid())
+  profileUrl String?
+  updatedAt  DateTime @updatedAt
+  username   String?
+}
